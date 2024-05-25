@@ -8,7 +8,7 @@ require_once 'components/head.php';
   </div>
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form class="space-y-6" action="#" method="POST">
+    <form class="space-y-6" action="/membershipsystem/index.php/validation" method="POST">
       <div>
         <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
         <div class="mt-2">
@@ -35,7 +35,7 @@ require_once 'components/head.php';
 
     <p class="mt-10 text-center text-sm text-gray-500">
       Not a member?
-      <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Create an account</a>
+      <a href="/membershipsystem/index.php/signup" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Create an account</a>
     </p>
   </div>
 </div>
