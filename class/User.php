@@ -1,19 +1,17 @@
 <?php
 
-class User {
+abstract class User {
     private $id;
     private $email;
     private $username;
     private $password;
-    private $is_admin = false;
 
-    public function __construct(string $id, string $username, string $email, string $password, bool $is_admin = false)
+    public function __construct(string $id, string $username, string $email, string $password)
     {
         $this->id = $id;
         $this->username = $username;
         $this->email = $email;
         $this->password = $password;
-        $this->is_admin = $is_admin;
     }
     public function getId()
     {
@@ -30,9 +28,5 @@ class User {
     public function getPassword()
     {
         return $this->password;
-    }
-    public function isAdmin()
-    {
-        return $this->is_admin;
     }
 }

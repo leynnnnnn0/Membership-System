@@ -7,7 +7,7 @@ class Member extends User
     private $membership_tier;
     private $remaining_time;
     private $total_time_consumed;
-    public function __construct($id, $username, $email, $password, $membership_tier, $remaining_time, $total_time_consumed)
+    public function __construct($id, $username, $email, $password, $membership_tier = "bronze", $remaining_time = 0, $total_time_consumed = 0)
     {
         parent::__construct($id, $username, $email, $password);
         $this->membership_tier = $membership_tier;
