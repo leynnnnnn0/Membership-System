@@ -7,7 +7,7 @@ class User {
     private $password;
     private $is_admin = false;
 
-    public function __construct($id, $username, $email, $password, $is_admin = false)
+    public function __construct(string $id, string $username, string $email, string $password, bool $is_admin = false)
     {
         $this->id = $id;
         $this->username = $username;
@@ -30,5 +30,9 @@ class User {
     public function getPassword()
     {
         return $this->password;
+    }
+    public function isAdmin()
+    {
+        return $this->is_admin;
     }
 }
