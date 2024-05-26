@@ -15,7 +15,6 @@ class Signup
             return false;
         }
     }
-
     public static function create_new_member(object $db, string $email, string $username, string $password)
     {
         try {

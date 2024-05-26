@@ -25,4 +25,12 @@ class Validation
     {
         return !password_verify($password, $hashedPassword);
     }
+
+    public static function handle_error(array $errors, string $error_message, string $location)
+    {
+        $errors[] = $error_message;
+        $_SESSION['error'] = $errors;
+        header('Location: ' . $location);
+        die();
+    }
 }

@@ -1,6 +1,7 @@
 <?php 
 require_once 'components/head.php';
 ?>
+<body class="h-full">
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
     <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
@@ -34,7 +35,22 @@ require_once 'components/head.php';
       <div class="text-sm">
             <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
           </div>
-
+      <?php
+      require_once 'util/session.php';
+      if(isset($_SESSION['error']))
+      {
+        foreach($_SESSION['error'] as $error)
+        {
+          echo '<p class="text-red-500">' . $error . '</p>';
+        }
+        unset($_SESSION['error']);
+      }
+      if(isset($_SESSION['success']))
+      {
+        echo '<p class="text-green-500">'. $_SESSION['success']. '</p>';
+        unset($_SESSION['success']);
+      }
+      ?>
       <div>
         <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create</button>
       </div>
@@ -46,6 +62,7 @@ require_once 'components/head.php';
     </p>
   </div>
 </div>
+</body>
 <?php 
 require_once 'components/footer.php';
 ?>

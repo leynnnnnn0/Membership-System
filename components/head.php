@@ -6,4 +6,4 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Membership System</title>
 </head>
-<body class="h-full">
+
