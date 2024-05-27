@@ -24,4 +24,14 @@ abstract class User {
     {
         return $this->password;
     }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
 }

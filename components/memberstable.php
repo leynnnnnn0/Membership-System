@@ -1,5 +1,5 @@
 <!-- component -->
-<div class="w-full my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8">
+<div class="w-full my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8 relative">
     <div
         class="align-middle rounded-tl-lg rounded-tr-lg inline-block w-full py-4 overflow-hidden bg-white shadow-lg px-12">
         <div class="flex justify-between">
@@ -76,9 +76,13 @@
                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
                         September 12</td>
                     <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                        <button
+                        <form action="/membershipsystem/index.php/dashboard/editprofile?<?=(string)$value['id']?> " method="post">
+                            
+                            <button
+                        type="submit"
                             class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">View
                             Details</button>
+                        </form>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -140,4 +144,14 @@
             </div>
         </div> -->
     </div>
+    <!-- component -->
+    <?php 
+    require_once 'util/session.php';
+    if(isset($_SESSION['member']))
+    {
+        require_once 'components/editprofile.php';
+    }
+    ?>
 </div>
+
+

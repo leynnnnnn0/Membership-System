@@ -29,7 +29,7 @@ require_once 'components/head.php';
         </div>
       </div>
       <?php 
-      require_once 'util/session.php';
+      
       if(isset($_SESSION['error']))
       {
         foreach($_SESSION['error'] as $error)
