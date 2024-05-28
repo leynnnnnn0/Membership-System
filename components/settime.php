@@ -1,5 +1,5 @@
-<div class="min-h-screen w-full p-6 bg-gray-100 flex items-center justify-center">
-  <div class="container max-w-screen-lg mx-auto">
+<div class="min-h-screen w-full p-6 bg-gray-100 flex  items-center justify-center">
+  <div class="container max-w-screen-lg h-1/2  mx-auto">
     <div>
       <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
         <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
@@ -13,9 +13,22 @@
               <form class="md:col-span-5 flex" method="POST" action="/membershipsystem/index.php/time/search">
                 <input type="text" name="search" placeholder="Search..." id="full_name" class="h-10 border mt-1 rounded-full px-4 w-full bg-gray-50" value="" />
                 <button class="bg-blue-500 ml-2 p-2 text-white rounded-lg">Search</button>
-              </form>
-
-              <div class="md:col-span-5">
+              </form>             
+                <?php 
+                if(isset($_SESSION['search_result'])) {
+                    if($_SESSION['search_result']){
+                        foreach($_SESSION['search_result'] as $result => $value) {
+                            echo '<div class="md:col-span-5 border-b-2 p-2 hover:bg-gray-100 cursor-pointer">';
+                            echo '<p class="font-bold text-md">Email:' . $value['email'] . '</p>';
+                            echo '<p class="font-bold text-md">Username: ' . $value['username'] . '</p>';
+                            echo  '</div>';
+                        }
+                        
+                    }else {
+                        echo '<p class="text-red-500">No results found</p>';
+                    }
+                } ?> 
+              <!-- <div class="md:col-span-5">
                 <label for="email">Email Address</label>
                 <input type="text" name="email" id="email" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="email@domain.com" />
               </div>
@@ -95,8 +108,9 @@
                 <div class="inline-flex items-end">
                   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
                 </div>
-              </div>
-
+              </div> -->
+                
+                
             </div>
           </div>
         </div>
