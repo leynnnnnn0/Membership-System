@@ -11,6 +11,9 @@ $route->put("/membershipsystem/index.php/dashboard/edit", "controllers/profile/e
 $route->delete("/membershipsystem/index.php/dashboard/hide", "controllers/profile/hide.php")->only("guest");
 $route->post("/membershipsystem/index.php/dashboard/delete", "controllers/profile/destroy.php")->only("guest");
 $route->post("/membershipsystem/index.php/addmember/create", "controllers/profile/create.php")->only("guest");
+$route->get("/membershipsystem/index.php/time", "controllers/settime.php")->only("guest");
+
+$route->post("/membershipsystem/index.php/time/search", "controllers/time/search.php")->only("guest");
 
 
 

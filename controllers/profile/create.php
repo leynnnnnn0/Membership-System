@@ -12,6 +12,8 @@ $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
+$errors = [];
+
 if(Validation::check_input_fields($username, $email, $password))
 {
     Validation::handle_error($errors, 'All fields are required.', '/membershipsystem/index.php/addmember');

@@ -13,3 +13,10 @@ function get_member(object $pdo, string $id)
     $result = $pdo->query($query, [":id" => $id]);
     return $result->fetch();
 }
+
+function get_member_by_email_or_username(object $pdo, string $search)
+{
+    $query = "SELECT * FROM members WHERE email = :email OR username = :username";
+    $result = $pdo->query($query, [":email" => $search, ":username" => $search]);
+    return $result->fetchAll();
+}
